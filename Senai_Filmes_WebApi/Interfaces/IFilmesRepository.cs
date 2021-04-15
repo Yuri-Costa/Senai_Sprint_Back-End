@@ -8,7 +8,7 @@ namespace Senai_Filmes_WebApi.Interfaces
     /// <summary>
     /// Interface responsavel pelo Filmes
     /// </summary>
-    public interface IFilmes
+    public interface IFilmesRepository
     {
     }
 }

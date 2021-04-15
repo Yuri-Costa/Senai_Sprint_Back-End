@@ -9,7 +9,7 @@ namespace Senai_Filmes_WebApi.Interfaces
     /// <summary>
     /// Interface responsavel pelo Genero
     /// </summary>
-    interface IGeneros
+    interface IGenerosRepository
     {
         /// <summary>
         /// Listar todos Generos
