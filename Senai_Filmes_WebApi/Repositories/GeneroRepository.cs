@@ -31,8 +31,20 @@ namespace Senai_Filmes_WebApi.Repositories
         }
 
         public void Cadastrar(GeneroDomain NovoGenero)
-        {
-            throw new NotImplementedException();
+        {   //declara a conexão con passando a string de conexão como parametro
+            using (SqlConnection con = new SqlConnection(stringConexao))
+            {
+                string QueryInsert = "INSERT INTO Generos(Nome) VALUES ('"+ NovoGenero.NomeGenero +"')";
+
+                //declara o slqcommand cmd passando a query que será executada e a conexão como parametro
+                using (SqlCommand cmd = new SqlCommand(QueryInsert, con))
+                {
+                    //abre a conexão com o banco de dados
+                    con.Open();
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
         }
 
         public void Delete(int id)
@@ -79,7 +91,8 @@ namespace Senai_Filmes_WebApi.Repositories
             }
 
             //retorna a lista de generos
-            return listGeneros;
+            return (listGeneros);
         }
+        
     }
 }
